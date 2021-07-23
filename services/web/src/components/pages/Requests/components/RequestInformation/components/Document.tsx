@@ -141,6 +141,7 @@ const RenderCategory = ({ category, editing, doc, handleCategoryChange }) => {
       >
         <Option value="childrenOrPregnancy">children</Option>
         <Option value="residency">residency</Option>
+        <Option value="identity">identity</Option>
         <Option value="income">income</Option>
         <Option value="housingInstability">housing</Option>
         <Option value="covid">covid</Option>

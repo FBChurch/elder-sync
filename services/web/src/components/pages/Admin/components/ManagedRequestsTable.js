@@ -89,6 +89,8 @@ export default function ManagedRequestsTable() {
 
         request['income'] = [];
 
+        request['identity'] = [];
+
         request['residency'] = [];
 
         request['housingInstability'] = [];
@@ -108,6 +110,7 @@ export default function ManagedRequestsTable() {
 
       setData(sortedRequests);
     } catch (error) {
+      console.log(error);
       alert('error');
     } finally {
       setIsFetching(false);
@@ -151,6 +154,18 @@ export default function ManagedRequestsTable() {
           <RenderDocumentStatusCell
             docs={rowData.residency}
             openDocument={() => openDocument(rowData.residency)}
+          />
+        );
+      },
+    },
+    {
+      title: 'ID',
+      field: 'identity',
+      render: rowData => {
+        return (
+          <RenderDocumentStatusCell
+            docs={rowData.identity}
+            openDocument={() => openDocument(rowData.identity)}
           />
         );
       },

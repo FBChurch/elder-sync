@@ -177,6 +177,8 @@ export const buildDocumentStatuses = documents => async dispatch => {
     income: 'missing',
     housingInstability: 'missing',
     covid: 'missing',
+    identity: 'missing',
+    childrenOrPregnancy: 'missing',
   };
 
   if (documents) {

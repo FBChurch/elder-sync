@@ -50,6 +50,7 @@ const ChangeCategoryButton = ({ handleChange }) => {
       <Option value="all">All</Option>
       <Option value="childrenOrPregnancy">Children</Option>
       <Option value="residency">Residency</Option>
+      <Option value="identity">identity</Option>
       <Option value="income">Income</Option>
       <Option value="housingInstability">Housing</Option>
       <Option value="covid">Covid</Option>
