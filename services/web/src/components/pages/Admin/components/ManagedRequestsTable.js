@@ -39,6 +39,10 @@ import RenderDocumentStatusCell from './components/Requests/RenderDocumentStatus
 
 import styles from '../../../../styles/pages/admin.module.css';
 
+import { formatDate } from '../../../../utils/dates/date';
+
+import { formatUTC } from '../../../../utils/dates';
+
 export default function ManagedRequestsTable() {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -84,6 +88,8 @@ export default function ManagedRequestsTable() {
 
         request['staffDifference'] =
           (new Date() - new Date(request.latestStaffActivity)) / 3600000;
+
+        request['lastResponded'] = formatUTC(request.latestTenantActivity);
 
         request['other'] = [];
 
@@ -220,6 +226,10 @@ export default function ManagedRequestsTable() {
           />
         );
       },
+    },
+    {
+      title: 'LR',
+      field: 'lastResponded',
     },
     {
       title: 'AMI',
