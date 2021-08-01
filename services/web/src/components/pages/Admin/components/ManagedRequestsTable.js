@@ -8,10 +8,7 @@ import socket from '../../../../config/socket';
 
 import { axiosWithAuth } from '../../../../api/axiosWithAuth';
 
-import {
-  addSubscription,
-  deleteSubscription,
-} from '../../../../redux/users/userActions';
+import { addSubscription, deleteSubscription } from '../../../../redux/users/userActions';
 
 import sortRequests from '../utils/sortRequests';
 import doesHouseholdContainPoc from '../../../../utils/general/doesHouseholdContainPoc';
@@ -36,6 +33,8 @@ import AttachmentViewer from './components/AttachmentViewer';
 import StatusCircle from './components/Requests/StatusCircle';
 
 import RenderDocumentStatusCell from './components/Requests/RenderDocumentStatusCell';
+
+import UploadDocModal from '../../../common/DocumentUploaderModal';
 
 import styles from '../../../../styles/pages/admin.module.css';
 
@@ -449,51 +448,51 @@ export default function ManagedRequestsTable() {
 }
 
 const subscribeToRequest = async (requestId, setData, dispatch) => {
-  try {
-    // Update table
-    setData(prevState =>
-      prevState.map(request => {
-        if (requestId === request.id) {
-          request['isSubscribed'] = true;
-        }
-        return request;
-      })
-    );
+	try {
+		// Update table
+		setData((prevState) =>
+			prevState.map((request) => {
+				if (requestId === request.id) {
+					request['isSubscribed'] = true;
+				}
+				return request;
+			})
+		);
 
-    // Persist new subscription
-    let subscription = await axiosWithAuth()
-      .post('/subscriptions', { requestId })
-      .then(res => res.data.subscription);
+		// Persist new subscription
+		let subscription = await axiosWithAuth()
+			.post('/subscriptions', { requestId })
+			.then((res) => res.data.subscription);
 
-    // Join request to receive notifications
-    socket.emit('joinRequest', requestId);
+		// Join request to receive notifications
+		socket.emit('joinRequest', requestId);
 
-    // Lastly, update current users state
-    dispatch(addSubscription(subscription));
-  } catch (error) {
-    message.error('Unable to subscribe to request');
-  }
+		// Lastly, update current users state
+		dispatch(addSubscription(subscription));
+	} catch (error) {
+		message.error('Unable to subscribe to request');
+	}
 };
 
-const formatSubscriptions = subscriptions => {
-  let result = {};
+const formatSubscriptions = (subscriptions) => {
+	let result = {};
 
-  subscriptions.forEach(sub => {
-    result[sub.requestId] = true;
-  });
+	subscriptions.forEach((sub) => {
+		result[sub.requestId] = true;
+	});
 
-  return result;
+	return result;
 };
 
 const RenderActivityCell = ({ timeDifference }) => {
-  //timeDifference is measured in hours
-  if (!timeDifference) {
-    return <StatusCircle color="#AAAAAA" />;
-  } else if (timeDifference <= 24) {
-    return <StatusCircle color="#B1EEC6" />;
-  } else if (timeDifference <= 48) {
-    return <StatusCircle color="#EDE988" />;
-  } else {
-    return <StatusCircle color="#F0B0AE" />;
-  }
+	//timeDifference is measured in hours
+	if (!timeDifference) {
+		return <StatusCircle color="#AAAAAA" />;
+	} else if (timeDifference <= 24) {
+		return <StatusCircle color="#B1EEC6" />;
+	} else if (timeDifference <= 48) {
+		return <StatusCircle color="#EDE988" />;
+	} else {
+		return <StatusCircle color="#F0B0AE" />;
+	}
 };
