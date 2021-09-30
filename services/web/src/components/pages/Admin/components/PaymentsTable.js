@@ -56,18 +56,21 @@ export default function PaymentsTable() {
       headerName: 'Type',
       field: 'type',
       width: 170,
+      editable: true,
     },
 
     {
       headerName: 'Account',
       field: 'accountNumber',
       width: 170,
+      editable: true,
     },
 
     {
       headerName: 'Renter Or Owner',
       field: 'renterOrOwner',
       width: 170,
+      editable: true,
     },
 
     { headerName: 'HoH is 18-24', field: 'youth', width: 170 },
@@ -297,6 +300,8 @@ const editPayment = async row => {
   const payload = {};
 
   payload[field] = value;
+
+  console.log(payload);
 
   try {
     await axiosWithAuth().put(`/payments/${id}`, payload);
