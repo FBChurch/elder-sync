@@ -2,14 +2,14 @@ import { useState } from 'react';
 
 import { axiosWithAuth } from '../../../../../../api/axiosWithAuth';
 
-import { Descriptions, Button, Form, Input, Select, message } from 'antd';
+import { Form, Input, Select, message } from 'antd';
 import EditButton from './components/EditButton';
 
 import { states } from '../../../../../../utils/data/states';
 
 const { Option } = Select;
 
-export default function Address({ request, setRequest, column = 2 }) {
+export default function Address({ request, setRequest }) {
   const [disabled, setDisabled] = useState(true);
 
   const [form] = Form.useForm();

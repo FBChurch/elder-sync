@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { axiosWithAuth } from '../../../../../../api/axiosWithAuth';
 
-import { Descriptions, Button, Form, Input, Select, message } from 'antd';
+import { Form, Input, Select, message } from 'antd';
 
 import EditButton from './components/EditButton';
 

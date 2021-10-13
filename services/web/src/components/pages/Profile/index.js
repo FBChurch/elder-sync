@@ -13,7 +13,7 @@ import { formatUTC } from '../../../utils/dates';
 
 import DocumentViewer from '../../common/DocumentViewer';
 
-import { Table, Tag, Space } from 'antd';
+import { Table } from 'antd';
 
 const columns = [
   {

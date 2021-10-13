@@ -100,8 +100,6 @@ export const logIn = (user, history) => async dispatch => {
 };
 
 export const registerAndApply = (requestValues, history) => async dispatch => {
-  let tenantEmail, tenantNumber, landlordName, landlordEmail, landlordNumber;
-
   // Trim whitespace off strings
   for (let key in requestValues) {
     let value = requestValues[key];
@@ -135,7 +133,7 @@ export const registerAndApply = (requestValues, history) => async dispatch => {
     dispatch(setCurrentUser(currentUser));
 
     // Submit am empty request
-    let newRequest = await axiosWithAuth()
+    await axiosWithAuth()
       .post('/requests')
       .then(res => res.data);
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { message } from 'antd';
 
 import { useParams } from 'react-router-dom';
@@ -10,7 +10,6 @@ import Actions from './components/Actions';
 import Modals from './components/Modals';
 
 import styles from '../../../styles/pages/programs.module.css';
-import Modal from 'antd/lib/modal/Modal';
 
 export default function Index() {
   const params = useParams();

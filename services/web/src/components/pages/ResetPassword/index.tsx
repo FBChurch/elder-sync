@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useHistory, Link, useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { Form, Input, Button } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { setLoading } from '../../../redux/global/globalActions';
 import { axiosWithAuth } from '../../../api/axiosWithAuth';
 import LoadingComponent from '../../common/LoadingComponent';
 
@@ -20,8 +18,6 @@ export default function Index() {
   const [finished, setFinished] = useState(false);
 
   const [invalidToken, setInvalidToken] = useState(false);
-
-  const history = useHistory();
 
   useEffect(() => {
     validateResetToken(resetToken, setInvalidToken, setIsLoading);

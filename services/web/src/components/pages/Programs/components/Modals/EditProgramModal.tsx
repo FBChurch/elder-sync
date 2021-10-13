@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Form, Input, Button, Checkbox, Modal, message } from 'antd';
+import { Form, Input, Modal, message } from 'antd';
 import { axiosWithAuth } from '../../../../../api/axiosWithAuth';
 
 export default function EditProgramModal({

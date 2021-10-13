@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { useParams } from 'react-router-dom';
 
-import { Form, Input, Button, Checkbox, Modal, message } from 'antd';
+import { Form, Input, Modal, message } from 'antd';
 import { axiosWithAuth } from '../../../../../api/axiosWithAuth';
 
 export default function AddNewProgramModal({

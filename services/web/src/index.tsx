@@ -1,5 +1,5 @@
 import 'antd/dist/antd.less';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import ReactDOM from 'react-dom';
 import ReactGA from 'react-ga';
@@ -38,7 +38,7 @@ import PrivateRoute from './utils/auth/PrivateRoute';
 
 import socket from './config/socket';
 
-import { Button, notification, Modal } from 'antd';
+import { Button, notification } from 'antd';
 
 import { fetchNotifications } from './redux/notifications/notificationActions';
 
@@ -63,12 +63,10 @@ ReactDOM.render(
 );
 
 function RAP() {
-  const [isTimeout, setIsTimeout] = useState(false);
-
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const { isLoggedIn, currentUser } = useSelector(state => state.user);
+  const { currentUser } = useSelector(state => state.user);
 
   const userRef = useRef(currentUser);
 

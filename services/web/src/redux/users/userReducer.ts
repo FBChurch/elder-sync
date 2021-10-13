@@ -1,5 +1,4 @@
-import { AcUnitOutlined } from '@material-ui/icons';
-import { setCurrentUser } from './userActions';
+
 
 const INITIAL_STATE = {
   isLoggedIn: false,

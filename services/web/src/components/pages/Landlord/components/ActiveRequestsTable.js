@@ -1,16 +1,8 @@
-import { useState, useEffect } from 'react';
-
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { useHistory } from 'react-router-dom';
 
-import MaterialTable from '@material-table/core';
-
 import { XGrid } from '@material-ui/x-grid';
-
-import { ExportCsv, ExportPdf } from '@material-table/exporters';
-
-import { tableIcons } from '../../../../utils/tableIcons';
 
 import Container from '../../../pages/Admin/components/components/Requests/Actions/Container';
 
@@ -82,19 +74,6 @@ const modifyRequests = requests => {
   });
 
   return res;
-};
-
-const RenderActivityCell = ({ timeDifference }) => {
-  //timeDifference is measured in hours
-  if (!timeDifference) {
-    return <StatusCircle color="#AAAAAA" />;
-  } else if (timeDifference <= 24) {
-    return <StatusCircle color="#B1EEC6" />;
-  } else if (timeDifference <= 48) {
-    return <StatusCircle color="#EDE988" />;
-  } else {
-    return <StatusCircle color="#F0B0AE" />;
-  }
 };
 
 const StatusCircle = ({ color }) => {
