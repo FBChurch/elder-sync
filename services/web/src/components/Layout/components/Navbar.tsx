@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { useHistory } from 'react-router-dom';
 
-import logo from '../../../assets/logo.png';
+import logo from '../../../assets/fbclogo.jpeg';
 
 import { logOut } from '../../../redux/users/userActions';
 
@@ -64,7 +64,12 @@ function Navbar() {
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
-        <img alt="Family promise logo" onClick={redirectToHome} src={logo} />
+        <img
+          className={styles.fbcLogo}
+          alt="FBC logo"
+          onClick={redirectToHome}
+          src={logo}
+        />
         <div className={styles.navItems}>
           {isLoggedIn && (
             <>
