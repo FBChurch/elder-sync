@@ -14,8 +14,6 @@ const Banner = ({ title }) => {
   return (
     <div className={styles.banner}>
       <div style={{ width: '100%', display: 'flex', gap: '1rem' }}>
-        <Image width={'2rem'} src={goldStar} />
-        <h1 style={{ color: 'white' }}>Family Promise of Spokane</h1>
       </div>
     </div>
   );

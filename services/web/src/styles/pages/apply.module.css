@@ -8,10 +8,9 @@
 }
 
 .banner {
-  min-height: 9vh;
-  background-color: #472d5b;
+  min-height: 3vh;
+  background-color: #019390;
   color: white;
-  padding: 1rem;
 
   display: flex;
   justify-content: start;
