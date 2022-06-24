@@ -22,7 +22,7 @@ export default function Index() {
         style={{ textAlign: 'center', padding: '1px' }}
       >
         <div className={styles.contentContainer}>
-          <h1>Are you in need of Housing Assistance?</h1>
+          <h1>Welcome to Faith Bible Church Care Fund Request Site</h1>
 
           <h2>Check your eligibility by following the link below</h2>
 

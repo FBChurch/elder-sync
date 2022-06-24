@@ -8,6 +8,14 @@
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.33);
 }
 
+.fbcLogo {
+  max-width: 80%;
+  height: 8vh;
+  width: 30vh; /* ie8 */
+  margin-left: 2vh;
+
+}
+
 img {
   height: 11rem;
   cursor: pointer;
