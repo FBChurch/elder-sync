@@ -3,9 +3,9 @@
   margin: 2px auto;
   padding: 2px;
   display: flex;
-  border: 3px solid #004477;
+  border: 3px solid #034942;
   border-radius: 50px;
-  color: #8d4982;
+  color: #007e6f;
   font-size: 1.7rem;
   font-weight: 800;
 }
@@ -19,7 +19,7 @@
 }
 .stepsBar {
   width: 40%;
-  background-color: #8d4982;
+  background-color: #007e6f;
   border-radius: 0 50px 50px 0;
   color: white;
   text-align: center;
